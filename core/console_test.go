@@ -59,6 +59,17 @@ func TestConsole_SetMode(t *testing.T) {
 	}
 }
 
+func TestConsole_Render(t *testing.T) {
+	buf := &bytes.Buffer{}
+	console := NewConsole(buf, ModePlain)
+	r := mockRenderable{"rendered output"}
+	console.Render(r)
+	want := "rendered output\n"
+	if got := buf.String(); got != want {
+		t.Errorf("Render failed: got %q, want %q", got, want)
+	}
+}
+
 func TestConsole_ModeSwitching(t *testing.T) {
 	buf := &bytes.Buffer{}
 	console := NewConsole(buf, ModePlain)

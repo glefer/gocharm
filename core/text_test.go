@@ -53,3 +53,11 @@ func TestText_Render_empty(t *testing.T) {
 		t.Errorf("Render empty: got %q, want empty string", got)
 	}
 }
+
+func TestText_Render_color_only(t *testing.T) {
+	text := NewText("Plain text without markup. ", ColorGreen)
+	got := text.Render()
+	if !strings.Contains(got, "\x1b[32m") {
+		t.Errorf("La couleur verte n'est pas appliquée: %q", got)
+	}
+}
