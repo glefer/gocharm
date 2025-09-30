@@ -1,0 +1,24 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of the go coverage tool
+*.cover
+
+# Dependency directories (remove the leading slash if you want to ignore directories in the entire repository)
+vendor/
+
+# Go build cache
+/go.sum
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+
+# Testing file
+main.go
